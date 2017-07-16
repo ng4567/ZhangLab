@@ -1,3 +1,6 @@
+#author = Nikhil Gopal
+#Last Updated July 15th, 2017
+
 import xlrd         #library used for reading the file
 
 #name of the file that you will create
