@@ -43,3 +43,4 @@ for item in response_column:
 
 workbook.save(file_name)
 
+print "Completed. Your file will be saved in the same directory as this script."
