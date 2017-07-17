@@ -15,7 +15,7 @@ sheet = wb.sheet_by_index(0)
 file_name_column = sheet.col_values(0)
 response_column = sheet.col_values(4)
 itsd_response_column = sheet.col_values(5)
-
+sample_id_column = sheet.col_values(17)
 
 import xlwt #library needed for writing a new excel file
 workbook = xlwt.Workbook()
@@ -27,19 +27,10 @@ for value in range(0,len(file_name_column)):
     sheet1.write(value,0,str(file_name_column[counter]))
     sheet1.write(value,1,str(response_column[counter]))
     sheet1.write(value,2,str(itsd_response_column[counter]))
+    sheet1.write(value,3, str(sample_id_column[counter]))
     counter += 1
 
-counter2 = 0
-#calculates the response ratio cloumn
-for item in response_column:
-    if counter2 == 0:
-        sheet1.write(counter2,3,"Response Ratio")
-    elif type(item) == float:
-        number = item / float(itsd_response_column[counter2])
-        sheet1.write(counter2,3,str(number))
-    else:
-        pass
-    counter2 += 1
+
 
 workbook.save(file_name)
 
